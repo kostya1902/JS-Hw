@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //----------------------------------HW4.1------------------------------------------------//
+    function square(a, b){
+        if (a>0 && b>0) {
+            let s = a * b;
+            return s;
+        }
+        return 0;
+    }
+    square(12,32)
+    //----------------------------------HW4.2------------------------------------------------//
+    function squareofcircus(r){
+        if (r>0){
+            let scircus = 2 * r * Math.PI;
+            return scircus;
+        }
+        return 0;
+    }
+    squareofcircus(12)
+    //----------------------------------HW4.3------------------------------------------------//
+    function squarecilindr(h, r){
+        if (h > 0 && r >0){
+            let scilindr = 2 * Math.PI * r * (h + r);
+            return scilindr;
+        }
+        return  0 ;
+    }
+    squarecilindr(32, 8)
+    //----------------------------------HW4.4------------------------------------------------//
+    function array (...arg){
+        return arguments;
+    }
+    let arr1 = array(1,2,3,'sdfsd',5)
+    console.log(arr1)
+
+    //----------------------------------HW4.5------------------------------------------------//
+    function paragraph (string){
+        document.write(`<p>${string}</p>`)
+    }
+    paragraph('sdfdvdfg')
+    //----------------------------------HW4.6------------------------------------------------//
+    function list(arg){
+        document.write(
+            `<ul>
+                 <li>${arg}</li>
+                 <li>${arg}</li>
+                 <li>${arg}</li>
+            </ul>`)
+    }
+    list(12323)
+    //----------------------------------HW4.7------------------------------------------------//
+    function ulwithcilce(text, num){
+        for (let i = 0; i <= num -1; i++){
+            let linum = num[i];
+            document.write(
+                `<ul>
+                    <li>${text}</li>
+                 </ul>`)
+        }
+    }
+    ulwithcilce('sdfsdf', 5)
+    //----------------------------------HW4.8------------------------------------------------//
+    function arraywithli(arr) {
+        for (let i = 0; i <= arr.length - 1; i++) {
+            let items = arr[i];
+            document.write(
+                `<ul>
+                    <li>${items}</li>
+                 </ul>`)
+        }
+    }
+    arraywithli(['sdf', 1234, true, false, 345])
+    //----------------------------------HW4.9------------------------------------------------//
+    function arraywithobj(users){
+        for (const user of users) {
+            document.write(`<div>${user.id}, ${user.name}, ${user.age}</div>`)
+        }
+    }
+    let user = [
+        {id:1,name:'kolya',age:32},
+        {id:2,name:'kolya',age:32},
+        {id:3,name:'kolya',age:32},
+        {id:4,name:'kolya',age:32},
+        {id:5,name:'kolya',age:32}
+    ]
+    arraywithobj(user)
+    //----------------------------------HW4.10------------------------------------------------//
+    function lessofnum(numbers){
+        let min = numbers[0];
+        for (let i = 1; i<= numbers.length; i++){
+            let less = numbers[i];
+            if (min > less){
+                min = less;
+            }
+        }
+        return min;
+
+    }
+    console.log(lessofnum([21,43,3,4,5,6,55]))
+    //----------------------------------HW4.11------------------------------------------------//
+    function sumofnum(numbers){
+        let sum = 0;
+        for (const number of numbers) {
+            sum += number;
+        }
+        return sum;
+    }
+    console.log(sumofnum([5,5,5,5]));
+    //----------------------------------HW4.12------------------------------------------------//
+    function swap(array,arg1,arg2){
+        let index = array[arg1]
+        if (arg1 < array.length && arg2 < array.length) {
+            array[arg1] = array[arg2];
+            array[arg2] = index;
+            return array;
+        }
+        return 'error'
+
+    }
+    console.log(swap([11,22,33,44,55],1,4))
+    //----------------------------------HW4.13------------------------------------------------//
+    function exchange(sum, array, currency,){
+        let nameofcurrency;
+        for (const arrayElement of array) {
+            if (currency === arrayElement.currency){
+                nameofcurrency = arrayElement;
+            }
+        }
+        let result = sum / nameofcurrency.value
+        return result;
+    }
+    let money = [
+        {
+            currency:'USD',
+            value:42
+        },
+        {
+            currency:'EUR',
+            value:47
+        },
+        {
+            currency:'GBP',
+            value:49
+        },
+        {
+            currency:'CAD',
+            value:37
+        }
+    ]
+    console.log(exchange(1000,money,'CAD' ))
+</script>
+
+</body>
+</html>

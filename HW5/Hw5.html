@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //-------------------------------5.1-------------------------------------//
+    const square = (a, b) => a * b;
+    console.log(square(10, 4))
+    //-------------------------------5.2-------------------------------------//
+    const squareOfCircus = (r) => 2 * Math.PI * r;
+    console.log(squareOfCircus(50))
+    //-------------------------------5.3-------------------------------------//
+    const squareOfCilindr = (h, r) => 2 * Math.PI * r * (h + r);
+    console.log(squareOfCilindr(5, 6))
+    //-------------------------------5.4-------------------------------------//
+    const array = (arr) => arr;
+    console.log(array([1, 2, 3, 4, 5, 6]))
+    //-------------------------------5.5-------------------------------------//
+    const paragraph = (text) => document.write(`<p>${text}</p>`);
+    paragraph('gfdffdjfjfj')
+    //-------------------------------5.6-------------------------------------//
+    const list = (text) => document.write(`<ul><li>${text}</li><li>${text}</li><li>${text}</li></ul>`)
+    list('fghfgh')
+    //-------------------------------5.7-------------------------------------//
+    const listNum = (text, num)=> {
+        for (let i =0;i <= num -1;i++) {
+            document.write(`<ul><li>${text}</li></ul>`)
+        }
+    }
+    listNum('dfgdfgfd',5)
+    //-------------------------------5.8-------------------------------------//
+    const arrayUl = (array)=>{
+        for (const items of array) {
+            document.write(`<ul><li>${items}</li></ul>`)
+
+        }
+    }
+    arrayUl([123,'dfgdf',true,123,false])
+    //-------------------------------5.9-------------------------------------//
+    const arrObj=(array)=> {
+        for (const items of array) {
+            document.write(`<div>${items.id},${items.name},${items.age}</div>`)
+        }
+    }
+    let objs =[
+        {id:1, name:'dfgdfg', age:43},
+        {id:1, name:'dfgdfg', age:43},
+        {id:1, name:'dfgdfg', age:43},
+        {id:1, name:'dfgdfg', age:43},
+        {id:1, name:'dfgdfg', age:43}
+    ]
+    arrObj(objs)
+    //-------------------------------5.10-------------------------------------//
+    const mifOfNum=(array)=>{
+        let min =array[0];
+        for (const items of array) {
+            if (min>items){
+                 min=items;
+            }
+        }
+        console.log(min)
+    }
+    mifOfNum([32,43,1,46,76])
+    //-------------------------------5.11-------------------------------------//
+    const sumOfNum=(array)=>{
+        let sum=0;
+        for (const items of array) {
+            sum+=items;
+        }
+        console.log(sum)
+    }
+    sumOfNum([12,24,14])
+    //-------------------------------5.12-------------------------------------//
+    const swap=(array,arg1,arg2)=>{
+        let swapper=array[arg1];
+        if (arg1<=array.length-1&&arg2<=array.length -1){
+            array[arg1]= array[arg2];
+            array[arg2]=swapper
+        }
+        console.log(array)
+    }
+    swap([11,22,33,44,55],2,4)
+
+    //-------------------------------5.13------------------------------------------------//
+    const exchange=(sum, array, currency)=>{
+        let nameofcurrency;
+        for (const arrayElement of array) {
+            if (currency === arrayElement.currency){
+                nameofcurrency = arrayElement;
+            }
+        }
+        let result = sum / nameofcurrency.value
+        console.log( result);
+    }
+    let money = [
+        {
+            currency:'USD',
+            value:42
+        },
+        {
+            currency:'EUR',
+            value:47
+        },
+        {
+            currency:'GBP',
+            value:49
+        },
+        {
+            currency:'CAD',
+            value:37
+        }
+    ]
+    exchange(1000,money,'GBP' )
+
+
+
+</script>
+
+</body>
+</html>
